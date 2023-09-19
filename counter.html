@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #counter {
+            font-size: 2em;
+        }
+        button {
+            font-size: 1.2em;
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter App</h1>
+    <div id="counter">0</div>
+    <button id="increment">+1</button>
+    <button id="decrement">-1</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        // Get references to the HTML elements
+        const counterElement = document.getElementById('counter');
+        const incrementButton = document.getElementById('increment');
+        const decrementButton = document.getElementById('decrement');
+        const resetButton = document.getElementById('reset');
+
+        // Initialize the counter
+        let counter = 0;
+
+        // Function to update the counter display
+        function updateCounter() {
+            counterElement.textContent = counter;
+        }
+
+        // Event listener for the increment button
+        incrementButton.addEventListener('click', function() {
+            counter += 1;
+            updateCounter();
+        });
+
+        // Event listener for the decrement button
+        decrementButton.addEventListener('click', function() {
+            counter -= 1;
+            updateCounter();
+        });
+
+        // Event listener for the reset button
+        resetButton.addEventListener('click', function() {
+            counter = 0;
+            updateCounter();
+        });
+
+        // Initial update of the counter display
+        updateCounter();
+    </script>
+</body>
+</html>
